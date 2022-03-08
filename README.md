@@ -25,7 +25,7 @@
 | column            | Type       | Option                         |
 |-------------------|------------|--------------------------------|
 | name              | string     | null: false                    |
-| text              | text       | null: false                    |
+| content           | text       | null: false                    |
 | category_id       | integer    | null: false                    |
 | condition_id      | integer    | null: false                    |
 | charge_id         | integer    | null: false                    |

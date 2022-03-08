@@ -41,8 +41,21 @@
 - belongs_to :user
 - has_one :order
 
-
 ## Orders Table
+
+| column         | Type       | Option                         |
+|----------------|------------|--------------------------------|
+| user           | references | null: false, foreign_key: true |
+| item           | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+- has_one :address
+
+
+## Addresses Table
 
 | column         | Type       | Option                         |
 |----------------|------------|--------------------------------|
@@ -52,9 +65,7 @@
 | address1       | string     | null: false                    |
 | address2       | string     | null: false                    |
 | phone          | string     | null: false                    |
-| user           | references | null: false, foreign_key: true |
-| item           | references | null: false, foreign_key: true |
+| order          | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :user
-- belongs_to :item
+- belongs_to :order

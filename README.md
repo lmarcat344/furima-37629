@@ -2,7 +2,6 @@
 
 ## Users Table
 
-|--------------------|---------|---------------------------|
 | column             | Type    | Option                    |
 |--------------------|---------|---------------------------|
 | nickname           | string  | null: false               |
@@ -18,12 +17,12 @@
 
 ### Association
 
-has_many :items
-has_many :orders
+- has_many :items
+- has_many :orders
 
 ## Items Table
 
-|-------------------|------------|--------------------------------|
+
 | column            | Type       | Option                         |
 |-------------------|------------|--------------------------------|
 | name              | string     | null: false                    |
@@ -40,13 +39,12 @@ has_many :orders
 
 ### Association
 
-belongs_to :user
-has_one :order
+- belongs_to :user
+- has_one :order
 
 
 ## Orders Table
 
-|----------------|------------|--------------------------------|
 | column         | Type       | Option                         |
 |----------------|------------|--------------------------------|
 | post_code      | integer    | null: false                    |
@@ -59,6 +57,5 @@ has_one :order
 | item_id        | references | null: false, foreign_key: true |
 
 ### Association
- 
-belongs_to :user
-belongs_to :item
+- belongs_to :user
+- belongs_to :item

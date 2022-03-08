@@ -32,7 +32,7 @@
 | source_deliver_id | integer    | null: false                    |
 | day_deliver_id    | integer    | null: false                    |
 | price             | integer    | null: false                    |
-| user_id           | references | null: false, foreign_key: true |
+| user              | references | null: false, foreign_key: true |
 
 *imageはActiveStorageで実装するため含まない
 
@@ -52,8 +52,8 @@
 | address1       | string     | null: false                    |
 | address2       | string     | null: false                    |
 | phone          | integer    | null: false                    |
-| user_id        | references | null: false, foreign_key: true |
-| item_id        | references | null: false, foreign_key: true |
+| user           | references | null: false, foreign_key: true |
+| item           | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user

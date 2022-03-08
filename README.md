@@ -30,7 +30,7 @@
 | condition_id      | integer    | null: false                    |
 | charge_id         | integer    | null: false                    |
 | prefecture_id     | integer    | null: false                    |
-| day_deliver_id    | integer    | null: false                    |
+| shipping_id       | integer    | null: false                    |
 | price             | integer    | null: false                    |
 | user              | references | null: false, foreign_key: true |
 
@@ -63,7 +63,7 @@
 | prefecture_id  | integer    | null: false                    | 
 | city           | string     | null: false                    |
 | address1       | string     | null: false                    |
-| address2       | string     |                                |
+| build_addr     | string     |                                |
 | phone          | string     | null: false                    |
 | order          | references | null: false, foreign_key: true |
 

@@ -1,13 +1,13 @@
 <mxfile host="65bd71144e">
     <diagram id="I6WxHr0mKMqLZp7KpKnR" name="ページ1">
-        <mxGraphModel dx="805" dy="483" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="768" dy="403" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="19" value="Users" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="30" y="90" width="350" height="200" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" value="+nickname (string型, NOT NULL)&#10;+email (string型, NOT NULL, ユニーク制約 )&#10;+encrypted_password (string型, NOT NULL)&#10;+last_name_zenkaku (string型, NOT NULL)&#10;+first_name_zenkaku (string型, NOT NULL)&#10;+last_name_kana (string型, NOT NULL)&#10;+first_name_kana (string型, NOT NULL)&#10;+year_id (integer型, NOT NULL)&#10;+month_id (integer型, NOT NULL)&#10;+day_id (integer型, NOT NULL)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="19">
+                <mxCell id="20" value="+nickname (string型, NOT NULL)&#10;+email (string型, NOT NULL, ユニーク制約 )&#10;+encrypted_password (string型, NOT NULL)&#10;+last_name_zenkaku (string型, NOT NULL)&#10;+first_name_zenkaku (string型, NOT NULL)&#10;+last_name_kana (string型, NOT NULL)&#10;+first_name_kana (string型, NOT NULL)&#10;+birthday (date型, NOT NULL)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="19">
                     <mxGeometry y="30" width="350" height="170" as="geometry"/>
                 </mxCell>
                 <mxCell id="21" value="Items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">

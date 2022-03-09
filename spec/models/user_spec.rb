@@ -164,8 +164,7 @@ RSpec.describe User, type: :model do
         @user.last_name_kana = 'ａｂｃｄｅｆ'
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name kana is invalid. Input full-width katakana characters")
-
-     end
+      end
     end
   end
 end

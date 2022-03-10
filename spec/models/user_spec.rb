@@ -7,7 +7,15 @@ RSpec.describe User, type: :model do
 
   describe 'ユーザー新規登録' do
     context '新規登録できる場合' do
-      it ' 全ての項目が存在すれば登録できる' do
+      it '全ての項目が存在すれば登録できる' do
+        expect(@user).to be_valid
+      end
+      it 'last_name_kanaが全角(カタカナ)"ー"有りで登録できる' do
+        @user.last_name_kana = 'メアリー'
+        expect(@user).to be_valid
+      end
+      it 'first_name_kanaが全角(カタカナ)"ー"有りで登録できる' do
+        @user.first_name_kana = 'メアリー'
         expect(@user).to be_valid
       end
     end

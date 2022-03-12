@@ -72,7 +72,7 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is invalid. Include both letters and numbers")
 
-        #数字のみでのテスト
+        # 数字のみでのテスト
         @user.password = '123456'
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is invalid. Include both letters and numbers")

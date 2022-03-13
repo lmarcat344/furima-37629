@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Item, type: :model do
   before do
-    @user = FactoryBot.create(:user)
-    @item = FactoryBot.build(:item, user_id: @user.id)
+    @item = FactoryBot.build(:item)
   end
 
   describe '商品の出品' do
@@ -15,7 +14,7 @@ RSpec.describe Item, type: :model do
 
     context '商品の出品ができない場合' do
       it 'ユーザが紐づいていなければ出品できない' do
-        @item.user_id = ''
+        @item.user = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("User must exist")
       end

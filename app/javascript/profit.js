@@ -14,12 +14,12 @@ function calcProfit(){
       taxElem = document.getElementById('add-tax-price');
       profitElem = document.getElementById('profit');
   
-      tax = priceNum * 10 / 100;
+      tax = Math.floor(priceNum * 10 / 100);
       profit = priceNum - tax;
     }
   
-    taxElem.innerHTML = Math.floor(tax);
-    profitElem.innerHTML = Math.floor(profit);
+    taxElem.innerHTML = tax;
+    profitElem.innerHTML = profit;
   });
 }
 

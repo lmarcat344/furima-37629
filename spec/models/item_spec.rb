@@ -20,9 +20,9 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("User must exist")
       end
       it '商品画像が空では出品できない' do
-        item_no_image = Item.new(id: 3, name: 'aaa', content: 'aaa', category_id: 1, condition_id: 1, charge_id: 1, prefecture_id: 1, shipping_id: 1, price: 1000, user_id: @user.id)
-        item_no_image.valid?
-        expect(item_no_image.errors.full_messages).to include("Image can't be blank")
+        @item.image = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Image can't be blank")
       end
       it '商品名(name)が空では出品できない' do
         @item.name = ''

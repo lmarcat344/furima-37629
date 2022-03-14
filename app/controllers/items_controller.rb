@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
       @item.destroy
     end
 
-    redirect_to items_path
+    redirect_to root_path
   end
 
 private

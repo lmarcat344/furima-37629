@@ -1,10 +1,9 @@
 class OrderAddress
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :post_code, :prefecture_id, :city, :address1, :build_addr, :phone
-  attr_accessor :token
+  attr_accessor :user_id, :item_id, :post_code, :prefecture_id, :city, :address1, :build_addr, :phone, :token
   
   with_options presence: true do
-    validates :post_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'is invalid. Enter it as follows (e.g. 123-4567)'}
+    validates :post_code, format: { with: /\A\d{3}-\d{4}\z/, message: "is invalid. Enter it as follows (e.g. 123-4567)" }
     validates :city
     validates :address1
     validates :phone, format: { with: /\A.{10,11}\z/, message: "is too short" }
@@ -12,9 +11,8 @@ class OrderAddress
     validates :item_id
     validates :token
   end
-    validates :phone, format: { with: /\A\d+\z/, message: "is invalid. Input only number" }
-    validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
-
+  validates :phone, format: { with: /\A\d+\z/, message: "is invalid. Input only number" }
+  validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)

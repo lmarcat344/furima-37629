@@ -1,0 +1,13 @@
+#preview {
+  display: flex;
+}
+
+.preview {
+  margin-right: 30px;
+}
+
+.preview-image {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}

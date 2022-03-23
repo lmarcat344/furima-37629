@@ -78,6 +78,7 @@
   <%= render 'shared/error_messages', model: @comment %>
 
   <%# コメントの入力と表示 %>
+  <%if user_signed_in? %>
   <div class="comment-box">
     <%= form_with model: [@item, @comment], id: "comment-form" do |f| %>
       <%= f.text_area :contents, class: "comment-text" %>
@@ -92,6 +93,9 @@
       <%end%>
     <%end%>
   </div>
+  <% else %>
+    <p>コメントはログインしたらできます。</p>
+  <% end %>
   <div id="comments">
     <h4>＜コメント一覧＞</h4>
     <% @item.comments.each do |comment| %>

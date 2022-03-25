@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_item, only: [:show, :destroy, :edit, :update]
-  before_action :move_to_index, except: [:index, :show, :new, :create]
+  before_action :move_to_index, except: [:index, :show, :new, :create, :search]
 
   def index
     @items = Item.order('created_at DESC')
@@ -42,6 +42,21 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @q = Item.ransack(params[:q])
+    # ヘッダーの検索フォームから来た場合と検索ページか来た場合に分かれてる
+    if params.dig(:q).nil?
+      @items = Item.search(params[:keyword])   
+    elsif params[:q]&.dig(:name)  # or検索を可能にするための記述
+      squished_keywords = params[:q][:name].squish
+      params[:q][:name_cont_any] = squished_keywords.split(" ")
+      @q = Item.ransack(params[:q])
+      @items = @q.result
+    else  # 何も入力がない場合
+      @items = @q.result
+    end
+    # render :index
+  end
   private
 
   def item_params

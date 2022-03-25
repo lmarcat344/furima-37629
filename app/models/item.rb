@@ -24,4 +24,12 @@ class Item < ApplicationRecord
   validates :charge_id, numericality: { other_than: 0, message: "can't be blank" }
   validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
   validates :shipping_id, numericality: { other_than: 0, message: "can't be blank" }
+
+  def self.search(search)
+    if search != ""
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 end

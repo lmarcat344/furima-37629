@@ -1,0 +1,25 @@
+.search-main{
+  display: flex;
+  height: 100vh;
+  width: 100vs;
+}
+
+.search-leftSide{
+  width: 30%;
+}
+
+.search-rightSide{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-item{
+  height: 200px;
+  width: 200px;
+}
+
+.item-image{
+  height: 200px;
+  width: 200px;
+}

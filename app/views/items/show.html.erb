@@ -87,9 +87,8 @@
         <br>
         不快な言葉遣いなどは利用制限や退会処分となることがあります。
       </p>
-      <%= f.submit "コメントする" do %>
+      <%= f.submit "コメントする", class: "comment-btn" do %>
         <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
       <%end%>
     <%end%>
   </div>

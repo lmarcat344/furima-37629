@@ -43,8 +43,19 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword])
-    render :index
+    @q = Item.ransack(params[:q])
+    # ヘッダーの検索フォームから来た場合と検索ページか来た場合に分かれてる
+    if params.dig(:q).nil?
+      @items = Item.search(params[:keyword])   
+    elsif params[:q]&.dig(:name)  # or検索を可能にするための記述
+      squished_keywords = params[:q][:name].squish
+      params[:q][:name_cont_any] = squished_keywords.split(" ")
+      @q = Item.ransack(params[:q])
+      @items = @q.result
+    else  # 何も入力がない場合
+      @items = @q.result
+    end
+    # render :index
   end
   private
 
